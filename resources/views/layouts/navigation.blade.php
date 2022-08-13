@@ -16,8 +16,11 @@
                         {{ __('Dashboard') }}
                     </x-nav-link>
                     <!-- ナビゲーションリンクを追加したいときはここ -->
-                    <x-nav-link :href="route('dashboard')" :active="request()->routeIs('dashboard')">
+                    <x-nav-link :href="route('upload')" :active="request()->routeIs('upload')">
                         {{ __('Upload') }}
+                    </x-nav-link>
+                    <x-nav-link :href="route('view')" :active="request()->routeIs('view')">
+                        {{ __('View') }}
                     </x-nav-link>
                 </div>
             </div>

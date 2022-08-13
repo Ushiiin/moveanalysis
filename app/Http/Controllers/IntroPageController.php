@@ -7,7 +7,7 @@ use Illuminate\Http\Request;
 class IntroPageController extends Controller
 {
     //
-    public function intro() {
+    public function index() {
         return view('intro');
     }
 }

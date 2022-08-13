@@ -19,7 +19,7 @@ Route::get('/', function () {
 
 // Introのためのトップページ
 use App\Http\Controllers\IntroPageController;
-Route::get('/intro', [IntroPageController::class, 'intro'])->name('intro');
+Route::get('/intro', [IntroPageController::class, 'index'])->name('intro');
 
 
 Route::get('/dashboard', function () {
@@ -27,3 +27,12 @@ Route::get('/dashboard', function () {
 })->middleware(['auth'])->name('dashboard');
 
 require __DIR__.'/auth.php';
+
+// Uploadのためのページ
+use App\Http\Controllers\UploadController;
+Route::get('/upload', [UploadController::class, 'index'])->middleware(['auth'])->name('upload');
+Route::post('/upload/action', [UploadController::class, "action"])->name('upload.action');
+
+// Viewのためのトップページ
+use App\Http\Controllers\ViewController;
+Route::get('/view', [ViewController::class, 'index'])->middleware(['auth'])->name('view');
