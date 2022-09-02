@@ -43,7 +43,12 @@ class UploadController extends Controller
                 // dd($v);
                 $date = substr($v["activitySegment"]["duration"]["startTimestamp"],0,10);
                 $type = $v["activitySegment"]["activityType"];
-                $distance = $v["activitySegment"]["distance"];
+                if (array_key_exists("distance", $v["activitySegment"])){
+                    $distance = $v["activitySegment"]["distance"];
+                } else {
+                    $distance = 0;
+                }
+                
                 echo $date . " " . $type . " " . $distance . "<br>";
 
                 // データベーステーブルにデータを格納する。
