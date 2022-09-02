@@ -30,10 +30,10 @@ class ViewController extends Controller
             // echo "<br>";
             if (array_key_exists($type,$move_total_distance)){
                 $move_type_number[$type] += 1;
-                $move_total_distance[$type] += 1;
+                $move_total_distance[$type] += $dis/1000;
             } else {
                 $move_type_number[$type] = 1;
-                $move_total_distance[$type] = $dis;
+                $move_total_distance[$type] = $dis/1000;
             }
         }
         // var_dump($move_total_distance);
